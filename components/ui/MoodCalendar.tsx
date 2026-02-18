@@ -37,7 +37,9 @@ export default function MoodCalendar({ moods = [] }: { moods: any[] }) {
           }
         }}
         components={{
-          DayContent: ({ date }) => {
+          Day: (props) => {
+            // ดึงค่า date ออกมาจาก props.day.date
+            const date = props.day.date; 
             const dayNumber = date.getDate();
             
             // 1. แปลงปีในปฏิทินให้เป็น ค.ศ.
